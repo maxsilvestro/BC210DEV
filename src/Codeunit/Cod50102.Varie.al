@@ -34,8 +34,10 @@ codeunit 50102 Varie
     end;
 
     local procedure alpha36String(): Text
+    var
+        lStringLbl: Label '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ', Locked = true;
     begin
-        exit('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+        exit(lStringLbl);
     end;
 
     local procedure fromBaseToInt(iList: List of [Integer]; iBase: Integer) oInt: Integer
