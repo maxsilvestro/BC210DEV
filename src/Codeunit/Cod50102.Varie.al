@@ -9,7 +9,7 @@ codeunit 50102 Varie
     begin
         lLen := StrLen(iText);
         for lIndex := 0 to lLen - 1 do
-            lList.Add(StrPos(alphaString(), iText[lLen - lIndex]) - 1);
+            lList.Add(StrPos(alpha36String(), iText[lLen - lIndex]) - 1);
         oInt := fromBaseToInt(lList, 36);
     end;
 
@@ -20,20 +20,20 @@ codeunit 50102 Varie
     begin
         fromIntToBase(iInt, 36, lList);
         foreach lInt in lList do
-            oText := alphaString() [lInt + 1] + oText;
+            oText := alpha36String() [lInt + 1] + oText;
     end;
 
-    procedure incAlpha(iString: Text) oString: Text
+    procedure incAlpha36(iString: Text) oString: Text
     begin
-        oString := incAlpha(iString, false);
+        oString := incAlpha36(iString, false);
     end;
 
-    procedure incAlpha(iString: Text; iAutoGrowe: Boolean) oString: Text
+    procedure incAlpha36(iString: Text; iAutoGrowe: Boolean) oString: Text
     begin
         oString := incAlpha(iString.ToUpper(), StrLen(iString), iAutoGrowe);
     end;
 
-    local procedure alphaString(): Text
+    local procedure alpha36String(): Text
     begin
         exit('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ');
     end;
@@ -66,7 +66,7 @@ codeunit 50102 Varie
         lIsLast: Boolean;
     begin
         if iAutoGrowe and (iPos = 0) then begin
-            iString := alphaString() [1] + iString;
+            iString := alpha36String() [1] + iString;
             iPos := 1;
         end;
 
@@ -86,17 +86,17 @@ codeunit 50102 Varie
     var
         lNum: Integer;
     begin
-        lNum := StrPos(alphaString(), Format(vChar));
-        if (lNum = StrLen(alphaString())) then begin
-            vChar := alphaString() [1];
+        lNum := StrPos(alpha36String(), Format(vChar));
+        if (lNum = StrLen(alpha36String())) then begin
+            vChar := alpha36String() [1];
             oIsLast := true;
         end
         else
-            vChar := alphaString() [lNum + 1];
+            vChar := alpha36String() [lNum + 1];
     end;
 
     local procedure IsChar(iChar: Char): Boolean
     begin
-        exit(alphaString().Contains(Format(iChar)));
+        exit(alpha36String().Contains(Format(iChar)));
     end;
 }

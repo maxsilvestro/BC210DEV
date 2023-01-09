@@ -17,7 +17,7 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
                 begin
                     lString := PadStr(lString, 5, '0');
                     for lIndex := 1 to 10000 do begin
-                        lString := lVarie.incAlpha(lString);
+                        lString := lVarie.incAlpha36(lString);
                         lTB.AppendLine(lString);
                     end;
 
