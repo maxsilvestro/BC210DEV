@@ -70,7 +70,6 @@ codeunit 50102 Varie
             iPos := 1;
         end;
 
-
         if IsChar(iString[iPos]) then
             lIsLast := IncValue(iString[iPos])
         else
