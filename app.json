@@ -28,5 +28,6 @@
   "runtime": "10.0",
   "features": [
     "NoImplicitWith"
-  ]
+  ],
+  "target": "OnPrem"
 }
