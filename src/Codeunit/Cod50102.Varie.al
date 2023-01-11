@@ -64,7 +64,7 @@ codeunit 50102 Varie
 
     local procedure incAlpha(iString: Text; iPos: Integer; iAutoGrowe: Boolean) oString: Text
     var
-        lInvalidStrLbl: Label 'Invali string';
+        lInvalidStrLbl: Label 'Invali string', comment = 'ITA="Stringa non valida"';
         lIsLast: Boolean;
     begin
         if iAutoGrowe and (iPos = 0) then begin
