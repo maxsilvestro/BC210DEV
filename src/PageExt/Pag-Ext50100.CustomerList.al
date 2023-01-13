@@ -25,6 +25,30 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
                     Message('%1 - %2 -%3 - %4', lIndex, lString, lVarie.fromAlpha36ToInt(lString), lVarie.fromIntToAlpha36(lIndex));
                 end;
             }
+            action(TestXML)
+            {
+                Caption = 'TestXML';
+                ApplicationArea = all;
+                Image = Document;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    lFile: Text;
+                    lInSt: InStream;
+                    lXMLBTMP: record "XML Buffer" temporary;
+                    lX: codeunit "XML Buffer Reader";
+
+                begin
+                    UploadIntoStream('Scegli il file', '', 'XML Files (*.xml)|*.xml', lFile, lInSt);
+
+                    lXMLBTMP."LoadFromStream"(lInSt);
+
+                    page.RunModal(page::"XML Buffer Page", lXMLBTMP);
+
+                end;
+            }
         }
     }
 }
