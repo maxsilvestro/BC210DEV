@@ -5,6 +5,18 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
     {
         addfirst(processing)
         {
+            action(TestStorage)
+            {
+                ApplicationArea = All;
+                Caption = 'Test Storage';
+
+                trigger OnAction()
+                var
+                    StorageDemo: Codeunit StorageDemo;
+                begin
+                    StorageDemo.Demostorage();
+                end;
+            }
             action(Debug)
             {
                 ApplicationArea = all;
