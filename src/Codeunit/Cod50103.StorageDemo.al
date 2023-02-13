@@ -47,7 +47,7 @@ codeunit 50103 StorageDemo
         BlobClient.Initialize(StorageAccountName, ContainerName, Authorization);
 
         //Creo un file
-        Response := BlobClient.PutBlobBlockBlobText('Nomedelfile.txt', 'contenuto del file di testo');
+        Response := BlobClient.PutBlobBlockBlobText('Nomedelfile2.txt', 'contenuto del file di testo2');
         if not Response.IsSuccessful() then
             error(Response.GetError());
 
