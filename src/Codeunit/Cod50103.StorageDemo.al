@@ -86,11 +86,7 @@ codeunit 50103 StorageDemo
         Body: JsonObject;
         Bodytext: Text;
         RespText: Text;
-        FromFile: text;
     begin
-
-
-
         Body.Add('name', 'pippo');
         Body.Add('ciao', 'sto cazzo');
         Body.WriteTo(Bodytext);
@@ -118,24 +114,43 @@ codeunit 50103 StorageDemo
         FromFile: text;
         InStr: InStream;
         InStr2: InStream;
+        Instr3: InStream;
+        ResInstr: InStream;
+        Outst: OutStream;
+        TempBlob: Codeunit "Temp Blob";
         TypeHelper: Codeunit "Type Helper";
+        Encoding: TextEncoding;
     begin
+        Encoding := Encoding::UTF8;
+        TempBlob.CreateOutStream(Outst, Encoding);
+        TempBlob.CreateInStream(InStr3, Encoding);
+
         if not UploadIntoStream('Style Sheet', '', 'All Files (*.*)|*.*', FromFile, InStr) then
             exit;
         if not UploadIntoStream('XML', '', 'All Files (*.*)|*.*', FromFile, InStr2) then
             exit;
 
+        CopyStream(Outst, InStr2);
 
+        // TempBlob.CreateOutStream(Outst);
+        // TempBlob.CreateInStream(Instr3);
+        Body.Add('XMLFile', TypeHelper.ReadAsTextWithSeparator(InStr3, TypeHelper.LFSeparator()));
         Body.Add('XMLStyleSheet', TypeHelper.ReadAsTextWithSeparator(InStr, TypeHelper.LFSeparator()));
-        Body.Add('XMLFile', TypeHelper.ReadAsTextWithSeparator(InStr2, TypeHelper.LFSeparator()));
+
         Body.WriteTo(Bodytext);
+        // Body.WriteTo(Outst);
+
+        //exit;
+        //
 
         IAuth := Auth.CreateCodeAuth('https://prove4c01.azurewebsites.net/api/XMLApplySheet', '8PWjBz0ETwGJVaHX7nHx8Mh0DxGkT06cdBj1l8lKO7bhAzFuzC8hdw==');
         Response := Func.SendPostRequest(IAuth, Bodytext, 'application/json');
 
-        if Response.IsSuccessful() then
-            Response.GetResultAsText(RespText)
-        else
+        if Response.IsSuccessful() then begin
+            FromFile := 'Invoice.htm';
+            Response.GetResultAsStream(ResInstr);
+            DownloadFromStream(ResInstr, 'Download', '', 'All Files (*.*)|*.*', FromFile);
+        end else
             Message(Response.GetError());
     end;
 }

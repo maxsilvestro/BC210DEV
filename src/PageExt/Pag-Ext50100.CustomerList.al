@@ -25,7 +25,8 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
                     lCU: Codeunit StorageDemo;
 
                 begin
-                    lCU.CallAzureFuncDemo();
+                    //lCU.CallAzureFuncDemo();
+                    lCU.CallAzureFuncXMLStyle();
                 end;
             }
             action(TestXML)
