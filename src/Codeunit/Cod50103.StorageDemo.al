@@ -148,7 +148,9 @@ codeunit 50103 StorageDemo
 
         if Response.IsSuccessful() then begin
             FromFile := 'Invoice.htm';
+
             Response.GetResultAsStream(ResInstr);
+
             DownloadFromStream(ResInstr, 'Download', '', 'All Files (*.*)|*.*', FromFile);
         end else
             Message(Response.GetError());

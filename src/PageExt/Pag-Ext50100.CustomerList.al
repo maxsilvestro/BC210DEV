@@ -20,6 +20,7 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
             action(Debug)
             {
                 ApplicationArea = all;
+                Caption = 'Test Azure Function';
                 trigger OnAction()
                 var
                     lCU: Codeunit StorageDemo;
