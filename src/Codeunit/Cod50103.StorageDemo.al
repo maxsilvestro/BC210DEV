@@ -1,5 +1,66 @@
 codeunit 50103 StorageDemo
 {
+
+    procedure CallAzureFuncDemo()
+    var
+        Auth: Codeunit "Azure Functions Authentication";
+        Func: Codeunit "Azure Functions";
+        IAuth: Interface "Azure Functions Authentication";
+        Response: Codeunit "Azure Functions Response";
+        Body: JsonObject;
+        Bodytext: Text;
+        RespText: Text;
+    begin
+        Body.Add('name', 'pippo');
+        Body.Add('ciao', 'sto cazzo');
+        Body.WriteTo(Bodytext);
+
+        IAuth := Auth.CreateCodeAuth('https://prove4c01.azurewebsites.net/api/HttpTrigger1', 'gMsraxJrCIzhcmKQ_QfbO_ls86exCkbdvu-71tUJlaT6AzFuE9wdNQ==');
+        Response := Func.SendPostRequest(IAuth, Bodytext, 'application/json');
+
+        if Response.IsSuccessful() then
+            Response.GetResultAsText(RespText)
+        else
+            Error(Response.GetError());
+
+        Message(RespText);
+    end;
+
+    procedure CallAzureFuncXMLStyle()
+    var
+        Func: Codeunit "Azure Functions";
+        Auth: Codeunit "Azure Functions Authentication";
+        Response: Codeunit "Azure Functions Response";
+        InStrFile, ResInstr : InStream;
+        IAuth: Interface "Azure Functions Authentication";
+        Body: JsonObject;
+        Bodytext: Text;
+        FromFile: text;
+        RespText: Text;
+    begin
+        if not UploadIntoStream('Style Sheet', '', 'All Files (*.*)|*.*', FromFile, InStrFile) then
+            exit;
+        Body.Add('XMLStyleSheet', StreamToText(InStrFile, TextEncoding::UTF8));
+
+        clear(InStrFile);
+        if not UploadIntoStream('XML', '', 'All Files (*.*)|*.*', FromFile, InStrFile) then
+            exit;
+        Body.Add('XMLFile', StreamToText(InStrFile, TextEncoding::UTF8));
+        Body.WriteTo(Bodytext);
+
+        IAuth := Auth.CreateCodeAuth('https://prove4c01.azurewebsites.net/api/XMLApplySheet', '8PWjBz0ETwGJVaHX7nHx8Mh0DxGkT06cdBj1l8lKO7bhAzFuzC8hdw==');
+        Response := Func.SendPostRequest(IAuth, Bodytext, 'application/json');
+
+        if Response.IsSuccessful() then begin
+            FromFile := 'Invoice.htm';
+
+            Response.GetResultAsStream(ResInstr);
+
+            DownloadFromStream(ResInstr, 'Download', '', 'All Files (*.*)|*.*', FromFile);
+        end else
+            Error(Response.GetError());
+    end;
+
     procedure Demostorage()
     var
         //Per lavorare col blob storage ci sono le codeunit 'ABS *'
@@ -77,82 +138,16 @@ codeunit 50103 StorageDemo
         DownloadFromStream(ZipInStream, DialogTitle, '', 'ZIP Files (*.zip)|*.zip', Filename);
     end;
 
-    procedure CallAzureFuncDemo()
+    local procedure StreamToText(var vInStream: InStream; iEncoding: TextEncoding) Result: Text
     var
-        Auth: Codeunit "Azure Functions Authentication";
-        Func: Codeunit "Azure Functions";
-        IAuth: Interface "Azure Functions Authentication";
-        Response: Codeunit "Azure Functions Response";
-        Body: JsonObject;
-        Bodytext: Text;
-        RespText: Text;
-    begin
-        Body.Add('name', 'pippo');
-        Body.Add('ciao', 'sto cazzo');
-        Body.WriteTo(Bodytext);
-
-        IAuth := Auth.CreateCodeAuth('https://prove4c01.azurewebsites.net/api/HttpTrigger1', 'gMsraxJrCIzhcmKQ_QfbO_ls86exCkbdvu-71tUJlaT6AzFuE9wdNQ==');
-        Response := Func.SendPostRequest(IAuth, Bodytext, 'application/json');
-
-        if Response.IsSuccessful() then
-            Response.GetResultAsText(RespText)
-        else
-            Error(Response.GetError());
-
-        Message(RespText);
-    end;
-
-    procedure CallAzureFuncXMLStyle()
-    var
-        Auth: Codeunit "Azure Functions Authentication";
-        Func: Codeunit "Azure Functions";
-        IAuth: Interface "Azure Functions Authentication";
-        Response: Codeunit "Azure Functions Response";
-        Body: JsonObject;
-        Bodytext: Text;
-        RespText: Text;
-        FromFile: text;
-        InStr: InStream;
-        InStr2: InStream;
-        Instr3: InStream;
-        ResInstr: InStream;
-        Outst: OutStream;
         TempBlob: Codeunit "Temp Blob";
+        InStr: InStream;
+        Outst: OutStream;
         TypeHelper: Codeunit "Type Helper";
-        Encoding: TextEncoding;
     begin
-        Encoding := Encoding::UTF8;
-        TempBlob.CreateOutStream(Outst, Encoding);
-        TempBlob.CreateInStream(InStr3, Encoding);
-
-        if not UploadIntoStream('Style Sheet', '', 'All Files (*.*)|*.*', FromFile, InStr) then
-            exit;
-        if not UploadIntoStream('XML', '', 'All Files (*.*)|*.*', FromFile, InStr2) then
-            exit;
-
-        CopyStream(Outst, InStr2);
-
-        // TempBlob.CreateOutStream(Outst);
-        // TempBlob.CreateInStream(Instr3);
-        Body.Add('XMLFile', TypeHelper.ReadAsTextWithSeparator(InStr3, TypeHelper.LFSeparator()));
-        Body.Add('XMLStyleSheet', TypeHelper.ReadAsTextWithSeparator(InStr, TypeHelper.LFSeparator()));
-
-        Body.WriteTo(Bodytext);
-        // Body.WriteTo(Outst);
-
-        //exit;
-        //
-
-        IAuth := Auth.CreateCodeAuth('https://prove4c01.azurewebsites.net/api/XMLApplySheet', '8PWjBz0ETwGJVaHX7nHx8Mh0DxGkT06cdBj1l8lKO7bhAzFuzC8hdw==');
-        Response := Func.SendPostRequest(IAuth, Bodytext, 'application/json');
-
-        if Response.IsSuccessful() then begin
-            FromFile := 'Invoice.htm';
-
-            Response.GetResultAsStream(ResInstr);
-
-            DownloadFromStream(ResInstr, 'Download', '', 'All Files (*.*)|*.*', FromFile);
-        end else
-            Message(Response.GetError());
+        TempBlob.CreateOutStream(Outst, iEncoding);
+        TempBlob.CreateInStream(InStr, iEncoding);
+        CopyStream(Outst, vInStream);
+        Result := TypeHelper.ReadAsTextWithSeparator(InStr, TypeHelper.LFSeparator());
     end;
 }
