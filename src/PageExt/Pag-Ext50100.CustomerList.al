@@ -5,6 +5,20 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
     {
         addfirst(processing)
         {
+            action(LinkWebAction)
+            {
+                ApplicationArea = All;
+                Image = LinkWeb;
+                Caption = 'Test EcoCerved OAuth';
+
+                trigger OnAction()
+                var
+                    ReqMagt: Codeunit RequestManagement;
+                begin
+                    Message(ReqMagt.GetEcoCervedDeleghe(ReqMagt.PostEcoCervedAuth()));
+                end;
+            }
+
             action(TestStorage)
             {
                 ApplicationArea = All;
