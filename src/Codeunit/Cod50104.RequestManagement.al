@@ -9,8 +9,8 @@ codeunit 50104 RequestManagement
     begin
         lUrl := 'https://identity.ecocerved.it/connect/token';
         lFormBody.Add('grant_type', 'client_credentials');
-        lFormBody.Add('client_id', '401E14EC-3100-4262-B102-E242482A3659@ecocamere');
-        lFormBody.Add('client_secret', 'TnlLbHlhNDdGdldLOXVTczBCVjFjWGZOb3ZjRGI2aE42c2dMNVQwd1RLcz0');
+        lFormBody.Add('client_id', '16B8E595-5E58-4E8E-837C-679B0F02271D@ecocamere');
+        lFormBody.Add('client_secret', 'TEd0ZFNyR01SRXF4SlcydS9NL0MxYndCcmcxNEZaWHdvUFRXSGEzRDF4TT0');
 
         if not PostRestForm(lUrl, lFormBody, lResponse) then
             Error('PostEcoCervedAuth\' + lResponse);
@@ -23,7 +23,7 @@ codeunit 50104 RequestManagement
         lAPIBaseUrl: Text;
     begin
         lAPIBaseUrl := 'https://demovivifir.ecocamere.it/api';
-        lAPIBaseUrl := 'https://vivifir.ecocamere.it/api';
+        //lAPIBaseUrl := 'https://vivifir.ecocamere.it/api';
 
         if not MakeBearerRequestGET(lAPIBaseUrl + '/utenti/procureDeleghe', iBearerToken, oResponse) then
             Error('GetEcoCervedDeleghe\' + oResponse);
