@@ -58,16 +58,38 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
                     lInSt: InStream;
                     lXMLBTMP: record "XML Buffer" temporary;
                     lX: codeunit "XML Buffer Reader";
-
+                    lXMLDoc: XmlDocument;
+                    lXmlNodeList: XmlNodeList;
+                    lXMLNode: XmlNode;
                 begin
                     UploadIntoStream('Scegli il file', '', 'XML Files (*.xml)|*.xml', lFile, lInSt);
 
-                    lXMLBTMP."LoadFromStream"(lInSt);
+                    XmlDocument.ReadFrom(lInSt, lXMLDoc);
+                    lXMLDoc.SelectNodes('//FatturaElettronicaBody/DatiBeniServizi/DettaglioLinee', lXmlNodeList);
+                    foreach lXMLNode in lXmlNodeList do begin
+                        ProcLine(lXMLNode);
+                    end;
 
-                    page.RunModal(page::"XML Buffer Page", lXMLBTMP);
+                    // lXMLBTMP."LoadFromStream"(lInSt);
+
+                    // page.RunModal(page::"XML Buffer Page", lXMLBTMP);
 
                 end;
             }
         }
     }
+
+
+    local procedure ProcLine(iXMLNode: XmlNode)
+    var
+        lText: Text;
+        lXMLNodeList: XmlNodeList;
+        lXMLNode: XmlNode;
+    begin
+        lXMLNodeList := iXMLNode.AsXmlElement().GetDescendantElements('NumeroLinea');
+        lXMLNodeList.Get(1, lXMLNode);
+        Message(lXMLNode.AsXmlElement().InnerText);
+
+    end;
 }
+
