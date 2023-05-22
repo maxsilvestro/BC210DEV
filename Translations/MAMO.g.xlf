@@ -3,6 +3,56 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="MAMO">
     <body>
       <group id="body">
+        <trans-unit id="Table 2371250045 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ExpBOMLine</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ExpBOMLine - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2371250045 - Field 1841323733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BOMQuantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ExpBOMLine - Field BOMQuantity - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2371250045 - Field 1468140684 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CompDesc</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ExpBOMLine - Field CompDesc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2371250045 - Field 442457684 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CompNo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ExpBOMLine - Field CompNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2371250045 - Field 3462841960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CompVar</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ExpBOMLine - Field CompVar - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2371250045 - Field 332802016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ItemNo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ExpBOMLine - Field ItemNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2371250045 - Field 1789400218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Level</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ExpBOMLine - Field Level - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2371250045 - Field 1165969121 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LineNo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ExpBOMLine - Field LineNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2371250045 - Field 1065973674 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TotalQty</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ExpBOMLine - Field TotalQty - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2371250045 - Field 2004914921 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>UoM</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table ExpBOMLine - Field UoM - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3241213558 - Method 3440752446 - NamedType 1968152428" size-unit="char" translate="yes" xml:space="preserve">
           <source>Save ZIP file..</source>
           <note from="Developer" annotates="general" priority="2">ITA="Salvataggio file ZIP.."</note>
@@ -88,6 +138,56 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page 4CO_UserProperty - Control WebServices Key Expiry Date - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 3785782868 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ExpBOMLines</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ExpBOMLines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3785782868 - Control 1841323733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the BOMQuantity field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ExpBOMLines - Control BOMQuantity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3785782868 - Control 1468140684 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the CompDesc field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ExpBOMLines - Control CompDesc - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3785782868 - Control 442457684 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the CompNo field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ExpBOMLines - Control CompNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3785782868 - Control 3462841960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the CompVar field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ExpBOMLines - Control CompVar - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3785782868 - Control 332802016 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the ItemNo field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ExpBOMLines - Control ItemNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3785782868 - Control 1789400218 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Level field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ExpBOMLines - Control Level - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3785782868 - Control 1165969121 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the LineNo field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ExpBOMLines - Control LineNo - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3785782868 - Control 1065973674 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the TotalQty field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ExpBOMLines - Control TotalQty - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3785782868 - Control 2004914921 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the UoM field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ExpBOMLines - Control UoM - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2354669020 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>JsonBuffer</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -157,6 +257,61 @@
           <source>XML Buffer Page</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XML Buffer Page - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1032360289 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity Explosion of BOM</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExplodeBOM - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1032360289 - NamedType 823094542" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExplodeBOM - NamedType BomCompLevelDescCaptLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1032360289 - NamedType 2821503350" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExplodeBOM - NamedType BomCompLevelNoCaptLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1032360289 - NamedType 684129817" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BOM Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExplodeBOM - NamedType BomCompLevelQtyCaptLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1032360289 - NamedType 233373579" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit of Measure Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExplodeBOM - NamedType BomCompLevelUOMCodeCaptLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1032360289 - NamedType 2624908476" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Quantity</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExplodeBOM - NamedType BOMQtyCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1032360289 - NamedType 2975731450" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExplodeBOM - NamedType CurrReportPageNoCaptLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1032360289 - NamedType 755565646" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Level</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExplodeBOM - NamedType LevelCaptLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1032360289 - NamedType 846391896" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The maximum number of BOM levels, %1, was exceeded. The process stopped at item number %2, BOM header number %3, BOM level %4.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExplodeBOM - NamedType ProdBomErr</note>
+        </trans-unit>
+        <trans-unit id="Report 1032360289 - NamedType 292368280" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity Explosion of BOM</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExplodeBOM - NamedType QtyExplosionofBOMCaptLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 1032360289 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>As of </source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report ExplodeBOM - NamedType Text000</note>
         </trans-unit>
         <trans-unit id="Report 3659210096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Test Language</source>
