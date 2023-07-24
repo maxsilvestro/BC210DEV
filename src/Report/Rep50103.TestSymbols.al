@@ -21,7 +21,7 @@ report 50103 "Test Symbols"
             trigger OnAfterGetRecord()
             begin
                 Mytext[1] := Integer.Number;
-                if Mytext = '≥' then
+                if Mytext = '≤' then
                     SetRange(Number, Number)
                 else
                     CurrReport.Skip();
