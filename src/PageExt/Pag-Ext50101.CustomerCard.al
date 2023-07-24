@@ -10,6 +10,14 @@ pageextension 50101 CustomerCard_50101 extends "Customer Card"
                 Caption = 'Contatore';
             }
         }
+        modify(Name)
+        {
+            trigger OnAfterValidate()
+
+            begin
+                OnNameChange(Rec.Name);
+            end;
+        }
     }
     actions
     {
@@ -58,6 +66,7 @@ pageextension 50101 CustomerCard_50101 extends "Customer Card"
     var
         BackgroundTaskId: Integer;
         counter: Integer;
+        ManEventSub: codeunit ManualEventSubscriber;
 
     trigger OnPageBackgroundTaskCompleted(TaskId: Integer; Results: Dictionary of [Text, Text])
     begin
@@ -85,6 +94,11 @@ pageextension 50101 CustomerCard_50101 extends "Customer Card"
 
     end;
 
+    trigger OnOpenPage()
+    begin
+        BindSubscription(ManEventSub);
+    end;
+
     local procedure StartBackgroundTask()
     var
         lTaskPar: Dictionary of [Text, Text];
@@ -92,5 +106,10 @@ pageextension 50101 CustomerCard_50101 extends "Customer Card"
         lTaskPar.Add('counter', Format(counter));
 
         CurrPage.EnqueueBackgroundTask(BackgroundTaskId, Codeunit::BackgroundHandler, lTaskPar, 600000, PageBackgroundTaskErrorLevel::Warning);
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnNameChange(var vDescr: Text[10])
+    begin
     end;
 }

@@ -100,4 +100,16 @@ codeunit 50102 Varie
     begin
         exit(alpha36String().Contains(Format(iChar)));
     end;
+
+    [Scope('OnPrem')]
+    procedure ReadSMBFile(FilePath: Text)
+    var
+        fileMngt: Codeunit "File Management";
+        AllFilesDescriptionTxt: Label 'All Files (*.*)|*.*', Locked = true;
+        FileName: Text;
+    begin
+        Download(FilePath, '', '', AllFilesDescriptionTxt, FileName);
+
+
+    end;
 }

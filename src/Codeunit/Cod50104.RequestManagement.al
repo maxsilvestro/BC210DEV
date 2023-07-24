@@ -1,6 +1,23 @@
 codeunit 50104 RequestManagement
 {
 
+    procedure PostEcoSFOauth() oToken: Text
+    var
+        lUrl, lClientId, lClientSecret : Text;
+        lFormBody: Dictionary of [Text, Text];
+        lResponse: Text;
+    begin
+        lUrl := 'https://d41000002lbh9eae--dev2.sandbox.my.salesforce.com/services/oauth2/token';
+        lFormBody.Add('grant_type', 'client_credentials');
+        lFormBody.Add('client_id', '3MVG9jBOyAOWY5bWlHqlOmhL9tJknp8HXb4JaHe5L_7mV0AWYLn6sT_CxoWnwyQ892jYs_QLvvkMdyM6Rw.Tc');
+        lFormBody.Add('client_secret', 'E69F9E2341BE5AD7874319614046224745896D9F36BC9F2C49549759D31D6A19');
+
+        if not PostRestForm(lUrl, lFormBody, lResponse) then
+            Error('PostEcoSFOauth\' + lResponse);
+
+        oToken := ParseOAuthToken(lResponse);
+    end;
+
     procedure PostEcoCervedAuth() oToken: Text
     var
         lUrl, lClientId, lClientSecret : Text;

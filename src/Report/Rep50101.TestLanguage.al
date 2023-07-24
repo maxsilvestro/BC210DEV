@@ -22,10 +22,10 @@ report 50101 "Test Language"
             var
                 lCode: Code[10];
             begin
-                if (LanguageDI.Code <> 'ITA') then
-                    lCode := 'ENG'
-                else
-                    lCode := LanguageDI.Code;
+                // if (LanguageDI.Code <> 'ITA') then
+                //     lCode := 'ENG'
+                // else
+                lCode := LanguageDI.Code;
                 CurrReport.Language := CULanguage.GetLanguageIdOrDefault(lCode);
             end;
         }
@@ -47,6 +47,6 @@ report 50101 "Test Language"
     }
 
     var
-        MyLabel: Label 'Inglese', comment = 'ITA="Italiano"';
+        MyLabel: Label 'Inglese ≥', comment = 'ITA="Italiano ≥"';
         CULanguage: Codeunit Language;
 }

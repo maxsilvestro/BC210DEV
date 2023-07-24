@@ -319,9 +319,14 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Test Language - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3659210096 - NamedType 2350589126" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Inglese</source>
-          <note from="Developer" annotates="general" priority="2">ITA="Italiano"</note>
+          <source>Inglese ≥</source>
+          <note from="Developer" annotates="general" priority="2">ITA="Italiano ≥"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Test Language - NamedType MyLabel</note>
+        </trans-unit>
+        <trans-unit id="Report 606215309 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test Symbols</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Test Symbols - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1074809241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Test_report</source>
@@ -339,12 +344,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCard_50101 - Control counterField - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1567705199 - Action 540986563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2901867346">
-          <source>Test Azure Function</source>
+          <source>Test SMB</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerList_50100 - Action Debug - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1567705199 - Action 2679305370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2901867346">
-          <source>Test EcoCerved OAuth</source>
+          <source>Test SalesForce OAuth</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerList_50100 - Action LinkWebAction - Property Caption</note>
         </trans-unit>

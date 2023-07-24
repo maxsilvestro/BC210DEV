@@ -9,13 +9,13 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
             {
                 ApplicationArea = All;
                 Image = LinkWeb;
-                Caption = 'Test EcoCerved OAuth';
+                Caption = 'Test SalesForce OAuth';
 
                 trigger OnAction()
                 var
                     ReqMagt: Codeunit RequestManagement;
                 begin
-                    Message(ReqMagt.GetEcoCervedDeleghe(ReqMagt.PostEcoCervedAuth()));
+                    Message(ReqMagt.PostEcoSFOauth());
                 end;
             }
 
@@ -34,14 +34,14 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
             action(Debug)
             {
                 ApplicationArea = all;
-                Caption = 'Test Azure Function';
+                Caption = 'Test SMB';
                 trigger OnAction()
                 var
-                    lCU: Codeunit StorageDemo;
+                    lCU: Codeunit Varie;
 
                 begin
                     //lCU.CallAzureFuncDemo();
-                    lCU.CallAzureFuncXMLStyle();
+                    lCU.ReadSMBFile('\\HP-MAMO\Sciascia\pippo.txt');
                 end;
             }
             action(TestXML)
