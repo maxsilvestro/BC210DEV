@@ -87,6 +87,20 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
                     Message(Format(myInteger, 2, '<Integer,2><Filler Character,0>'));
                 end;
             }
+            action(TestChar)
+            {
+                ApplicationArea = All;
+                trigger OnAction()
+                var
+                    myText: Text;
+                    valid: Text;
+                begin
+                    myText := '?123ciao sto cazzo 99@ò';
+                    valid := '1234567890';
+                    myText := DelChr(myText, '=', DelChr(myText, '=', valid));
+                    Message(myText);
+                end;
+            }
         }
     }
 
