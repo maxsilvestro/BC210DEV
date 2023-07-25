@@ -76,6 +76,17 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
 
                 end;
             }
+            action(TestFormat)
+            {
+                ApplicationArea = All;
+                trigger OnAction()
+                var
+                    myInteger: Decimal;
+                begin
+                    myInteger := 3.999999;
+                    Message(Format(myInteger, 2, '<Integer,2><Filler Character,0>'));
+                end;
+            }
         }
     }
 
