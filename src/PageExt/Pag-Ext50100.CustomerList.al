@@ -5,6 +5,14 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
     {
         addfirst(processing)
         {
+            action(TestMail)
+            {
+                ApplicationArea = All;
+                trigger OnAction()
+                begin
+                    sendMail();
+                end;
+            }
             action(LinkWebAction)
             {
                 ApplicationArea = All;
@@ -34,14 +42,15 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
             action(Debug)
             {
                 ApplicationArea = all;
-                Caption = 'Test SMB';
+                Caption = 'Test Filter';
                 trigger OnAction()
                 var
                     lCU: Codeunit Varie;
 
                 begin
                     //lCU.CallAzureFuncDemo();
-                    lCU.ReadSMBFile('\\HP-MAMO\Sciascia\pippo.txt');
+                    //lCU.ReadSMBFile('\\HP-MAMO\Sciascia\pippo.txt');
+                    CreateFilterPage;
                 end;
             }
             action(TestXML)
@@ -104,6 +113,27 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
         }
     }
 
+    procedure sendMail()
+    var
+        lEmailMessage: Codeunit "Email Message";
+        lEmail: Codeunit Email;
+        lRecipients: List of [Text];
+        lCC: List of [Text];
+        lBCC: List of [Text];
+        lSubj: TextBuilder;
+        lBody: TextBuilder;
+    begin
+        lRecipients.Add('massimiliano.silvestro@4consulting.it');
+        lBCC.Add('massimiliano.rampazzo@4consulting.it');
+        lSubj.Append('Oggetto');
+        lBody.AppendLine('Testo riga 1');
+        lBody.AppendLine('Testo riga 2');
+        lBody.AppendLine('Testo riga 3');
+        lBody.AppendLine('Testo riga 4');
+        lEmailMessage.create(lRecipients, lSubj.ToText(), lBody.ToText(), false, lCC, lBCC);
+
+        lEmail.Send(lEmailMessage, enum::"Email Scenario"::Default);
+    end;
 
     local procedure ProcLine(iXMLNode: XmlNode)
     var
@@ -115,6 +145,21 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
         lXMLNodeList.Get(1, lXMLNode);
         Message(lXMLNode.AsXmlElement().InnerText);
 
+    end;
+
+    procedure CreateFilterPage()
+    var
+        lFilterPageBuilder: FilterPageBuilder;
+        lCustomer: Record Customer;
+        lItem: Record Item;
+    begin
+        lFilterPageBuilder.AddRecord('Item Table', lItem);
+        lFilterPageBuilder.Addfield('Item Table', lItem."No.", 'A*');
+        lFilterPageBuilder.PageCaption := 'Item Filter Page';
+        lFilterPageBuilder.RunModal;
+        lItem.reset;
+        lItem.SetView(lFilterPageBuilder.Getview('Item Table'));
+        Message('lItem.GetFilters %1', lItem.GetFilters);
     end;
 }
 

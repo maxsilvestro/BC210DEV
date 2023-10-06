@@ -188,6 +188,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ExpBOMLines - Control UoM - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 980813379 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ItemImages</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ItemImages - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 980813379 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ItemImages - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 980813379 - Control 1594621544 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the picture that has been inserted for the item.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page ItemImages - Control Picture - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2354669020 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>JsonBuffer</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -328,6 +343,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Test Symbols - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 442961355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TestBreak</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report TestBreak - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 1074809241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Test_report</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -344,7 +364,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerCard_50101 - Control counterField - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1567705199 - Action 540986563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2901867346">
-          <source>Test SMB</source>
+          <source>Test Filter</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerList_50100 - Action Debug - Property Caption</note>
         </trans-unit>
@@ -362,6 +382,46 @@
           <source>TestXML</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CustomerList_50100 - Action TestXML - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 989445961 - Control 980813379 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Picture</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension itemCardExt_50104 - Control ItemImages - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1907567533 - Control 636482471 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2938519335">
+          <source>Specify the amount to ship.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension MAB Warehouse Shipment - Control AmountToShip - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1907567533 - Control 636482471 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2938519335">
+          <source>Shipment amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension MAB Warehouse Shipment - Control AmountToShip - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4065285791 - Action 188005811 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4284303991">
+          <source>Move selected lines in a new Warehouse Shimpment.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension MAB Whse Shipment Subform - Action SplitLinesAction - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4065285791 - Action 188005811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4284303991">
+          <source>Split shipment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension MAB Whse Shipment Subform - Action SplitLinesAction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4065285791 - Action 188005811 - Method 1377591017 - NamedType 3764383116" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 4065285791">
+          <source>Do You want to move the %1 selected lines in a new Warehouse Shimpment?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension MAB Whse Shipment Subform - Action SplitLinesAction - Method OnAction - NamedType ConfirmLbl</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4065285791 - Control 21960574 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4284303991">
+          <source>Specify the unit amount from order.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension MAB Whse Shipment Subform - Control UnitAmount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4065285791 - Control 21960574 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4284303991">
+          <source>Unit amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension MAB Whse Shipment Subform - Control UnitAmount - Property Caption</note>
         </trans-unit>
       </group>
     </body>
