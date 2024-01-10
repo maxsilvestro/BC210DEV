@@ -5,6 +5,22 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
     {
         addfirst(processing)
         {
+            action(TestProgress)
+            {
+                ApplicationArea = All;
+                trigger OnAction()
+                var
+                    ProgDialog: Codeunit ProgDialog;
+                    Customer: Record Customer;
+                begin
+                    ProgDialog.Init(Customer.Count, 1, Customer.TableCaption);
+                    Customer.FindSet();
+                    repeat
+                        ProgDialog.Update(Customer.Name);
+                        Sleep(10);
+                    until Customer.Next() = 0;
+                end;
+            }
             action(TestMail)
             {
                 ApplicationArea = All;

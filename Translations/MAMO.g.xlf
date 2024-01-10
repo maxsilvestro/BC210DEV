@@ -53,6 +53,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table ExpBOMLine - Field UoM - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3910820254 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>#1##################\\</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ProgDialog - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3910820254 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>#2##################\\</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ProgDialog - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3910820254 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1%</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit ProgDialog - NamedType Text002</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3241213558 - Method 3440752446 - NamedType 1968152428" size-unit="char" translate="yes" xml:space="preserve">
           <source>Save ZIP file..</source>
           <note from="Developer" annotates="general" priority="2">ITA="Salvataggio file ZIP.."</note>
@@ -387,6 +402,16 @@
           <source>Picture</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension itemCardExt_50104 - Control ItemImages - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3788894451 - Method 3669417960 - NamedType 1373828376" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3788894451">
+          <source>Save Excel File...</source>
+          <note from="Developer" annotates="general" priority="2">ITA="Salva file Excel..."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemList50102 - Method WriteExcelFile - NamedType lDialogTitle</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3788894451 - Method 3669417960 - NamedType 3032860863" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3788894451">
+          <source>Excel Files (*.xlsx;*.xls)|*.xlsx;*.xls</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemList50102 - Method WriteExcelFile - NamedType lExcelFileType</note>
         </trans-unit>
         <trans-unit id="PageExtension 1907567533 - Control 636482471 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2938519335">
           <source>Specify the amount to ship.</source>
