@@ -17,7 +17,7 @@ pageextension 50100 CustomerList_50100 extends "Customer List"
                     Customer.FindSet();
                     repeat
                         ProgDialog.Update(Customer.Name);
-                        Sleep(10);
+                        Sleep(100);
                     until Customer.Next() = 0;
                 end;
             }

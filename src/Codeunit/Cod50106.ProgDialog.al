@@ -2,10 +2,10 @@ codeunit 50106 ProgDialog
 {
     var
         Window: Dialog;
-        Text000: Label '#1##################\\';
-        Text001: Label '#2##################\\';
+        Text000: Label '#1##################\\', Locked = true;
+        Text001: Label '#2##################\\', Locked = true;
+        Text002: Label '#3##################', Locked = true;
         MaxCount: Integer;
-        Text002: Label '%1%';
         StepCount: Integer;
         Counter: Integer;
 
@@ -19,9 +19,11 @@ codeunit 50106 ProgDialog
             NewStepCount := 1;
         StepCount := NewStepCount;
 
-        ProgressBarText := Text000 + Text001;
+        ProgressBarText := Text000 + Text001 + Text002;
         Window.Open(ProgressBarText);
         Window.Update(1, Format(WindowTitle));
+        Window.Update(2, '');
+        Window.Update(3, '');
     end;
 
     procedure Update(WindowText: Text)
@@ -34,10 +36,9 @@ codeunit 50106 ProgDialog
             if WindowText <> '' then begin
                 Counter := Counter + 1;
                 if Counter mod StepCount = 0 then begin
-                    UpdText := Format(WindowText);
+                    Window.Update(2, Format(WindowText));
                     if MaxCount <> 0 then
-                        UpdText += ' ' + StrSubstNo(Text002, Round(Counter / MaxCount * 100, 1));
-                    Window.Update(2, UpdText);
+                        Window.Update(3, Format(Round(Counter / MaxCount * 100, 1)) + '%');
                 end;
             end;
     end;
